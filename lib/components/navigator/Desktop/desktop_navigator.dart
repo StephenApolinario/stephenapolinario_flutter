@@ -77,7 +77,8 @@ class DesktopNavigator extends StatelessWidget {
   }
 
   Widget _options(BuildContext context) {
-    String currentRouteName = ModalRoute.of(context)!.settings.name ?? '';
+    String currentRouteName =
+        GoRouter.of(context).routeInformationProvider.value.uri.toString();
     AppLocalizations localizations = AppLocalizations.of(context)!;
     NavigatorProvider navigatorProvider =
         NavigatorProvider(localizations: localizations);
